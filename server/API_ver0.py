@@ -13,7 +13,7 @@ from flask_socketio import SocketIO
 
 
 class socketApp(Flask):
-    model = joblib.load('../bath4cases_RF.lib')
+    model = joblib.load('./bath4cases_RF.lib')
     label = ['empty', 'sink', 'toilet', 'shower']
     url = "https://sensors-real-time.firebaseio.com/"
     fb = firebase.FirebaseApplication(url, None)
