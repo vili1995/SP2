@@ -41,7 +41,7 @@ class socketApp(Flask):
 
         
     def startApp(self):
-        self.socketio.run(self.app, port=1000)
+        self.socketio.run(self.app, port=5000)
 
     def startThread(self):
         if self.predictionThread == None:
