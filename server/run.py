@@ -1,5 +1,6 @@
-import API_ver0 as api
 from flask import Flask
+
+import API_ver0 as api
 
 app = Flask(__name__)
 socket_app = api.socketApp(app)

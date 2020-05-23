@@ -13,12 +13,12 @@ app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins='*')
 
 
-@socketio.on('connect')
+@socketio.on('connect', namespace='/event')
 def connect():
     print('client connected', request.sid)
 
 
-@socketio.on('disconnect')
+@socketio.on('disconnect', namespace='/event')
 def disconnect():
     print('client disconnected', request.sid)
 
@@ -30,7 +30,7 @@ def mock_predict():
         socketio.emit('prediction', {
             'Time': stamp.strftime('%Y-%m-%d %H:%M:%S'),
             'Result': random.choice(label)
-        })
+        }, namespace='/event')
 
 
 prediction_thread = None

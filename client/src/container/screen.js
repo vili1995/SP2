@@ -63,7 +63,7 @@ const ContentStyled = styled(Content)`
   box-sizing: content-box;
 `
 
-const socket = socketIOClient('http://localhost:5000')
+const socket = socketIOClient('http://localhost:5000/event')
 
 const Screen = () => {
   const [connectionStatus, setConnectionStatus] = useState('Offline')
